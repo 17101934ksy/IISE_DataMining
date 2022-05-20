@@ -23,7 +23,7 @@ if __name__ == '__main__':
     lgb_model.fit(X_train_full, y_train_full)
     y_test_pred = lgb_model.predict(X_test)
 
-    label=['Normal', 'Anormal']
+    label=['Normal', 'Anomaly']
 
     plot = plot_confusion_matrix(lgb_model,
                                 X_test, y_test,
