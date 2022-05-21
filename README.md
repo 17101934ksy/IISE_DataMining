@@ -21,9 +21,13 @@ drive.mount('/content/drive')
 ### Environment
 ```python
 python 3.7.13
-numpy
-pandas
-sklearn
+numpy 1.21.6
+pandas 1.3.5
+matplotlib 3.2.2
+seaborn 0.11.2
+requests 2.23.0
+PIL.image 7.1.2
+sklearn 1.0.2
 xgboost
 lightgbm
 
@@ -46,21 +50,25 @@ def set_env(path, seed):
 set_env(CFG['PATH'],CFG['SEED'])
 ```
 ### Model Metrics
-![initial](https://user-images.githubusercontent.com/88478829/169639780-bbf5b2bc-3f8d-4ae0-96d3-a0a4ff30d460.png)
 ![initial](https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png)
+![initial](https://user-images.githubusercontent.com/88478829/169639780-bbf5b2bc-3f8d-4ae0-96d3-a0a4ff30d460.png)
+
 
 ### Model Select
 lightgbm 모델은 다양한 모델처럼 좋은 성능을 보이지만 빠르다는 장점이 있습니다.  
-따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다.
-
+따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다. 
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
 ---|---|---|---|
 RandomForest|max_depth, min_samples_leaf, min_samples_split|0.9999|1.0|
 XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
 LightGBM|learning_rate|0.9999|1.0|
 SVM|C, gamma, kernel|0.9999|1.0|
+  
+  
 
 ### Model Fine Tuning
+fbeta=2로 고정한 뒤, learing_rate, max_depth를 조정해가며   
+최고의 재현율과 fbeta값이 나오는 모델을 선정하는 단계입니다.
 ```python
 lgb_score_ = []
 params = []
