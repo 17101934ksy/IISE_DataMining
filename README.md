@@ -20,16 +20,17 @@ drive.mount('/content/drive')
 
 ### Environment(version)
 ```python
-python 3.7.13
-numpy 1.21.6
-pandas 1.3.5
-matplotlib 3.2.2
-seaborn 0.11.2
-requests 2.23.0
-PIL.image 7.1.2
-sklearn 1.0.2
-xgboost
-lightgbm
+Name|install|Version|
+---|---|---|
+numpy|!pip install numpy|1.21.6
+pandas|!pip install pandas|1.3.5
+matplotlib|!pip install matplotlib|3.2.2
+seaborn|!pip install seaborn|0.11.2
+requests|!pip install requests|2.23.0
+PIL.image|!pip install image|7.1.2
+sklearn|!pip install scikit-learn|1.0.2
+xgboost|!pip install xgboost|0.90
+lightgbm|!pip install lightgbm|2.2.3
 
 ```
 ### Package Info
