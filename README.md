@@ -3,9 +3,11 @@
 ## Anomaly Detection NSL-KDD
 
 ### Team
-Team Leader: IISE 16102171 yskim569
-Main developer: IISE 17101934 17101934ksy
-Main developer: IISE 20102007 ehfapddl
+역할|학번|Git|
+---|---|---|
+Team Leader|16102171 김영서|yskim569
+Main developer|17101934 고세윤|17101934ksy
+Main developer|20102007 김수연|ehfapddl
 
 ### Quickstart
 
