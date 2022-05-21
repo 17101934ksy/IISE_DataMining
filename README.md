@@ -50,6 +50,7 @@ def set_env(path, seed):
 set_env(CFG['PATH'],CFG['SEED'])
 ```
 ### Model Metrics
+주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.
 ![initial](https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png)
 ![initial](https://user-images.githubusercontent.com/88478829/169639780-bbf5b2bc-3f8d-4ae0-96d3-a0a4ff30d460.png)
 
