@@ -73,28 +73,25 @@ fbeta=2로 고정한 뒤, learing_rate, max_depth를 조정해가며
 ```python
 lgb_score_ = []
 params = []
-
 lgb_params = {'learning_rate' : np.linspace(0.01, 0.1, 10)}
-
 scoring = {'recall_score': make_scorer(recall_score),
           'fbeta_score': make_scorer(fbeta_score, beta=2)}
-
-
 for lr in lgb_params['learning_rate']:
   for md in [md for md in range(1, 10)]:
-    
     params.append([lr, md])
-
     lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=lr, n_estimators=100, subsample=0.75, 
                                 colsample_bytree=0.8, tree_method='gpu_hist', random_state=CFG['SEED'],
                                 max_depth=md)
-
     lgb_score = cross_validate(lgb_model, X_train_full, y_train_full, scoring=scoring)
     lgb_score_.append(lgb_score)
 ```
    
 ### Model Test
-
+테스트 데이터셋 적용결과 최적의 모델 및 결과입니다
+```python
+lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=0.08, n_estimators=100, subsample=0.75, 
+                            colsample_bytree=0.8, tree_method='gpu_hist', random_state=CFG['SEED'],
+                            max_depth=6)
+```
 ![initial](https://user-images.githubusercontent.com/88478829/169640702-82431313-ce0d-467c-8438-a29a09e01e59.png)
-![initial](https://user-images.githubusercontent.com/88478829/169640731-cc99c799-b72b-4d71-9b32-b295162dfa78.png)
 ![initial](https://user-images.githubusercontent.com/88478829/169640738-1acf4866-a0f1-4675-ae86-68fa04972186.png)
