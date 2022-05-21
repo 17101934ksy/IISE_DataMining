@@ -55,7 +55,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 
 
 ### Model Select
-모델링 선택은 Fbata score를 사용했습니다.
+모델링 선택은 Fbata score를 사용했습니다.  
 lightgbm 모델은 다양한 모델처럼 좋은 성능을 보이지만 빠르다는 장점이 있습니다.  
 따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다. 
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
