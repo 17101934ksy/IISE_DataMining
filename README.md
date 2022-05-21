@@ -54,5 +54,30 @@ XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
 LightGBM|learning_rate|0.9999|1.0|
 SVM|C, gamma, kernel|0.9999|1.0|
 
-lightgbm 모델은 XGboost과 비교하면 비슷한 성능을 보이지만 빠르다는 장점이 있습니다.
+lightgbm 모델은 XGboost과 비교하면 비슷한 성능을 보이지만 빠르다는 장점이 있습니다.  
 따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다.
+
+### Model Fine Tuning
+```python
+lgb_score_ = []
+params = []
+
+lgb_params = {'learning_rate' : np.linspace(0.01, 0.1, 10)}
+
+scoring = {'recall_score': make_scorer(recall_score),
+          'fbeta_score': make_scorer(fbeta_score, beta=2)}
+
+
+for lr in lgb_params['learning_rate']:
+  for md in [md for md in range(1, 10)]:
+    
+    params.append([lr, md])
+
+    lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=lr, n_estimators=100, subsample=0.75, 
+                                colsample_bytree=0.8, tree_method='gpu_hist', random_state=CFG['SEED'],
+                                max_depth=md)
+
+    lgb_score = cross_validate(lgb_model, X_train_full, y_train_full, scoring=scoring)
+    lgb_score_.append(lgb_score)
+```
+
