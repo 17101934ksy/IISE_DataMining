@@ -40,6 +40,7 @@ IISE_DataMining/
     modular.py
     
     data/
+    save_model/
     func/
         __init__.py
         processing.py
@@ -48,7 +49,6 @@ IISE_DataMining/
         loader.py
     project_ipynb/
         NSL_Model.ipynb
-    save_model/
 ```
 
 ### Fix Randomseed
