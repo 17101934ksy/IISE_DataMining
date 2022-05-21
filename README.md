@@ -33,6 +33,8 @@ lightgbm
 
 ```
 ### Package Info
+NSL_Model.ipynb: 전체 데이터마이닝 과정 및 모델 비교 
+main.py: 데이터마이닝 모델 재사용을 위한 모듈 
 ```pathon
 IISE_DataMining/
     __init__.py
