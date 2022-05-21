@@ -73,7 +73,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 이렇게 범위가 크게 증가함에 따라서 통신의 과정이 다양화 되고 복잡해 졌습니다.  
 이에따라 네트워크 공격이 더욱 고도화되고 지능화 되는 등, 개인 정보 유출이나 서버 해킹 등의 위험성이 높아졌습니다.  
 저희는 이상탐지를 활용해 데이터 분석을 통한 네트워크 데이터 이상탐지에 대해서 연구하여  
-네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.![image](https://user-images.githubusercontent.com/88478829/169642437-3757a03b-e11c-4b3e-aeda-30ffb005e356.png)
+네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.
 
 <img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="1000" height="300"/>
 
