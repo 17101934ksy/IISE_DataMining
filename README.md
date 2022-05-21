@@ -86,7 +86,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 
 ### Model Metrics
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.
-<img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="500" height="300"/>                                                                                                 <img src="https://user-images.githubusercontent.com/88478829/169639780-bbf5b2bc-3f8d-4ae0-96d3-a0a4ff30d460.png" width="500" height="300"/>
+<img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="500" height="300" float="left"/>                                                                                                 <img src="https://user-images.githubusercontent.com/88478829/169639780-bbf5b2bc-3f8d-4ae0-96d3-a0a4ff30d460.png" width="500" height="300" float="right"/>
 
 ### Model Select
 모델링 선택은 Fbata score를 사용했습니다.  
@@ -129,4 +129,4 @@ lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=0.08, n_estimat
                             ...
 >>최적의 fbeta 성능: 0.9909867691394472
 ```
-<img src="https://user-images.githubusercontent.com/88478829/169640702-82431313-ce0d-467c-8438-a29a09e01e59.png" width="500" height="300"/>                         <img src="https://user-images.githubusercontent.com/88478829/169640738-1acf4866-a0f1-4675-ae86-68fa04972186.png" width="400" height="300"/>
+<img src="https://user-images.githubusercontent.com/88478829/169640702-82431313-ce0d-467c-8438-a29a09e01e59.png" width="500" height="300" float="left"/>                         <img src="https://user-images.githubusercontent.com/88478829/169640738-1acf4866-a0f1-4675-ae86-68fa04972186.png" width="400" height="300" float="right"/>
