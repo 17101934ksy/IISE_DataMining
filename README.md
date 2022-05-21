@@ -46,15 +46,6 @@ def set_env(path, seed):
 set_env(CFG['PATH'],CFG['SEED'])
 ```
 
-### Model Comparison
-Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
----|---|---|---|
-RandomForest|max_depth, min_samples_leaf, min_samples_split|0.9999|1.0|
-XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
-LightGBM|learning_rate|0.9999|1.0|
-SVM|C, gamma, kernel|0.9999|1.0|
-
-
 ### Model Select
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
 ---|---|---|---|
@@ -62,3 +53,6 @@ RandomForest|max_depth, min_samples_leaf, min_samples_split|0.9999|1.0|
 XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
 LightGBM|learning_rate|0.9999|1.0|
 SVM|C, gamma, kernel|0.9999|1.0|
+
+lightgbm 모델은 XGboost과 비교하면 비슷한 성능을 보이지만 빠르다는 장점이 있습니다.
+따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다.
