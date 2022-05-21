@@ -49,6 +49,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 ### Model Select
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
 ---|---|---|---|
-RandomForest|max_depth, min_samples_leaf, min_samples_split|0.99|1.0|
-홍길동|97점|78점|93점|
-이순신|89점|93점|97점|
+RandomForest|max_depth, min_samples_leaf, min_samples_split|0.9999|1.0|
+XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
+LightGBM|learning_rate|0.9999|1.0|
+SVM|C, gamma, kernel|0.9999|1.0|
