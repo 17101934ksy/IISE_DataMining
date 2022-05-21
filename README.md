@@ -19,7 +19,6 @@ drive.mount('/content/drive')
 ```
 
 ### Environment(version)
-```python
 Name|install|Version|
 ---|---|---|
 numpy|!pip install numpy|1.21.6
@@ -32,7 +31,6 @@ sklearn|!pip install scikit-learn|1.0.2
 xgboost|!pip install xgboost|0.90
 lightgbm|!pip install lightgbm|2.2.3
 
-```
 ### Package Info
 NSL_Model.ipynb: 전체 데이터마이닝 과정 모듈   
 main.py: 데이터마이닝 모델 재사용을 위한 모듈  
