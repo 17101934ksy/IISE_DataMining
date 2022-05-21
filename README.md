@@ -95,4 +95,6 @@ for lr in lgb_params['learning_rate']:
    
 ### Model Test
 
-![initial](https://github.com/17101934ksy/IISE_DataMining/issues/3#issue-1243898353)
+![initial](https://user-images.githubusercontent.com/88478829/169640702-82431313-ce0d-467c-8438-a29a09e01e59.png)
+![initial](https://user-images.githubusercontent.com/88478829/169640731-cc99c799-b72b-4d71-9b32-b295162dfa78.png)
+![initial](https://user-images.githubusercontent.com/88478829/169640738-1acf4866-a0f1-4675-ae86-68fa04972186.png)
