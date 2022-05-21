@@ -45,3 +45,10 @@ def set_env(path, seed):
 
 set_env(CFG['PATH'],CFG['SEED'])
 ```
+
+### Model Select
+Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
+---|---|---|---|
+RandomForest|max_depth, min_samples_leaf, min_samples_split|0.99|1.0|
+홍길동|97점|78점|93점|
+이순신|89점|93점|97점|
