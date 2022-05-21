@@ -81,3 +81,5 @@ for lr in lgb_params['learning_rate']:
     lgb_score_.append(lgb_score)
 ```
 
+![initial](https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png)
+
