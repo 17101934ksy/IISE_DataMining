@@ -45,6 +45,8 @@ def set_env(path, seed):
 
 set_env(CFG['PATH'],CFG['SEED'])
 ```
+### Model Metrics
+
 
 ### Model Select
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
