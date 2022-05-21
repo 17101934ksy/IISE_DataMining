@@ -59,20 +59,23 @@ IISE_DataMining/
 ```python
 CFG = {
     'PATH': '/content/drive/MyDrive/Colab Notebooks/데이터마이닝/project',
-    'SEED': 41
-    }
-
+    'SEED': 41}
 def set_env(path, seed):
   np.random.seed(seed)
   random.seed(seed)
   os.environ['PYTHONHASHSEED'] = str(seed)
   np.random.seed(seed)
   os.chdir(path)
-
 set_env(CFG['PATH'],CFG['SEED'])
 ```
 ### Model Object
-<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="500" height="300"/>
+네트워크 통신의 범위는 컴퓨터를 넘어서 스마트폰과 같은 스마트 기기, 가정에서 사용하는 스마트 가전, 그리고 iot 등으로 확장되었습니다.  
+이렇게 범위가 크게 증가함에 따라서 통신의 과정이 다양화 되고 복잡해 졌습니다.  
+이에따라 네트워크 공격이 더욱 고도화되고 지능화 되는 등, 개인 정보 유출이나 서버 해킹 등의 위험성이 높아졌습니다.  
+저희는 이상탐지를 활용해 데이터 분석을 통한 네트워크 데이터 이상탐지에 대해서 연구하여  
+네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.![image](https://user-images.githubusercontent.com/88478829/169642437-3757a03b-e11c-4b3e-aeda-30ffb005e356.png)
+
+<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="1000" height="300"/>
 
 ### Model Metrics
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.
