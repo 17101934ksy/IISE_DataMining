@@ -2,6 +2,11 @@
 
 ## Anomaly Detection NSL-KDD
 
+### Team
+Team Leader: IISE 16102171 yskim569
+Main developer: IISE 17101934 17101934ksy
+Main developer: IISE 20102007 ehfapddl
+
 ### Quickstart
 
 구글 Colab에서 클론하기
