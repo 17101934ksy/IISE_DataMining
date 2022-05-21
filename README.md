@@ -87,7 +87,7 @@ for lr in lgb_params['learning_rate']:
 ```
    
 ### Model Test
-테스트 데이터셋 적용결과 최적의 모델 및 결과입니다
+테스트 데이터셋 적용결과 최적의 모델 및 Fbeta,Recall의 그래프, 혼동행렬 결과입니다.
 ```python
 lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=0.08, n_estimators=100, subsample=0.75, 
                             colsample_bytree=0.8, tree_method='gpu_hist', random_state=CFG['SEED'],
