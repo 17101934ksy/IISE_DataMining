@@ -82,7 +82,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 저희는 이상탐지를 활용해 데이터 분석을 통한 네트워크 데이터 이상탐지에 대해서 연구하여  
 네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.
 
-<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="1000" height="300"/>
+<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="800" height="300"/>
 
 ### Model Metrics
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.
