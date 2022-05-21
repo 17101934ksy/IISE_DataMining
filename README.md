@@ -46,18 +46,19 @@ def set_env(path, seed):
 set_env(CFG['PATH'],CFG['SEED'])
 ```
 ### Model Metrics
-
+![initial](https://user-images.githubusercontent.com/88478829/169639780-bbf5b2bc-3f8d-4ae0-96d3-a0a4ff30d460.png)
+![initial](https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png)
 
 ### Model Select
+lightgbm 모델은 다양한 모델처럼 좋은 성능을 보이지만 빠르다는 장점이 있습니다.  
+따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다.
+
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
 ---|---|---|---|
 RandomForest|max_depth, min_samples_leaf, min_samples_split|0.9999|1.0|
 XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
 LightGBM|learning_rate|0.9999|1.0|
 SVM|C, gamma, kernel|0.9999|1.0|
-
-lightgbm 모델은 XGboost과 비교하면 비슷한 성능을 보이지만 빠르다는 장점이 있습니다.  
-따라서, lightgbm을 최종 모델로 선정하여 하이퍼 파라미터를 조정하였습니다.
 
 ### Model Fine Tuning
 ```python
@@ -82,6 +83,3 @@ for lr in lgb_params['learning_rate']:
     lgb_score = cross_validate(lgb_model, X_train_full, y_train_full, scoring=scoring)
     lgb_score_.append(lgb_score)
 ```
-
-![initial](https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png)
-
