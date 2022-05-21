@@ -21,6 +21,7 @@ drive.mount('/content/drive')
 ### Environment(version)
 Name|install|Version|
 ---|---|---|
+python||3.7.13
 numpy|!pip install numpy|1.21.6
 pandas|!pip install pandas|1.3.5
 matplotlib|!pip install matplotlib|3.2.2
