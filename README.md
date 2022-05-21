@@ -46,6 +46,15 @@ def set_env(path, seed):
 set_env(CFG['PATH'],CFG['SEED'])
 ```
 
+### Model Comparison
+Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
+---|---|---|---|
+RandomForest|max_depth, min_samples_leaf, min_samples_split|0.9999|1.0|
+XGboost|learning_rate, gamma, max_depth|0.9999|1.0|
+LightGBM|learning_rate|0.9999|1.0|
+SVM|C, gamma, kernel|0.9999|1.0|
+
+
 ### Model Select
 Name|#Params|GridsearchCV Fbeta|Validaton Fbeta
 ---|---|---|---|
