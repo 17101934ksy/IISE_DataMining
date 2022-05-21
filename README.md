@@ -34,7 +34,7 @@ lightgbm
 ```
 ### Package Info
 NSL_Model.ipynb: 전체 데이터마이닝 과정 파일   
-main.py: 데이터마이닝 모델 재사용을 위한 모듈
+main.py: 데이터마이닝 모델 재사용을 위한 모듈  
 modular.py: 모델 재사용 과정에 외부 모듈 에러시 주석 풀고 사용하는 
 ```pathon
 IISE_DataMining/
