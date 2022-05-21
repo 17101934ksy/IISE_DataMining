@@ -92,3 +92,5 @@ for lr in lgb_params['learning_rate']:
     lgb_score = cross_validate(lgb_model, X_train_full, y_train_full, scoring=scoring)
     lgb_score_.append(lgb_score)
 ```
+   
+### Model Test
