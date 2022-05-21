@@ -32,6 +32,24 @@ xgboost
 lightgbm
 
 ```
+### Package Info
+```pathon
+IISE_DataMining/
+    __init__.py
+    main.py
+    modular.py
+    
+    data/
+    func/
+        __init__.py
+        processing.py
+    loader/
+        __init__.py
+        loader.py
+    project_ipynb/
+        NSL_Model.ipynb
+    save_model/
+```
 
 ### Fix Randomseed
 ```python
