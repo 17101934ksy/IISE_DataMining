@@ -37,7 +37,7 @@ class DataLoader():
                                                          else 0)
 
     # 공격 유무 판단
-    self.data['attack_flag'] = self.data['attack'].apply(lambda x: 0 if x == 'normal' else 1)
+    self.data['attack_flag'] = self.data['attack'].apply(lambda x: 1 if x == 'normal' else 0)
 
   def __return__(self):
     return self.data  
