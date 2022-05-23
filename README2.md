@@ -153,4 +153,4 @@ print(f'새로운 threshold: {thr_[idx]}')
 ```
 
 <img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="300" height="300" float="left"/>
-<img src="https://user-images.githubusercontent.com/105711315/169698129-6a0f9df7-3a4b-4357-893e-d658934efe0d.png" width="300" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169790354-2eb2bd71-7355-4286-9218
