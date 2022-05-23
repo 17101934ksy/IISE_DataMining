@@ -5,7 +5,7 @@
 ### Team
 역할|기여|학번|Git|
 ---|---|---|---|
-Team Leader|Idea planning, Presentation|16102171 김영서|[yskim569](https://github.com/yskim569)
+Team Leader|Main Idea planning, Presentation|16102171 김영서|[yskim569](https://github.com/yskim569)
 Main developer|Data mining development|17101934 고세윤|[17101934ksy](https://github.com/17101934ksy/IISE_DataMining)
 Team member|Participation|20102007 김수연|[ehfapddl](https://github.com/ehfapddl)
 
