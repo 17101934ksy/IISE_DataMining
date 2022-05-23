@@ -87,7 +87,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 ### Model Metrics
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.  
 sklearn에서는 혼동행렬 계산시 label=1을 양성으로 설정하므로 pos_label=0 으로 설정하였습니다.
-<img src=https://user-images.githubusercontent.com/88478829/169787624-4f3cdc7e-68e4-43ae-ae8e-45ac4203dd05.png width="800" height="300"/>
+<img src="https://user-images.githubusercontent.com/88478829/169787624-4f3cdc7e-68e4-43ae-ae8e-45ac4203dd05.png" width="800" height="300"/>
 <img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="400" height="300" float="left"/>                                                                                                 <img src="https://i.stack.imgur.com/swW0x.png" width="400" height="300" float="right"/>
 
 ### Model Select
@@ -122,10 +122,9 @@ for lr in lgb_params['learning_rate']:
     lgb_score = cross_validate(lgb_model, X_train_full, y_train_full, scoring=scoring)
     lgb_score_.append(lgb_score)
 ```
-<p>
-<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="400" height="300" align="left"/>
-<img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" align="right"/>
-</p> 
+
+<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="400" height="300" float="left"/>
+<img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" float="right"/>
   
 ### Model Test
 Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
