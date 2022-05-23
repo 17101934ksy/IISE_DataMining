@@ -131,7 +131,8 @@ for lr in lgb_params['learning_rate']:
 Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
 오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
 또한, threshold를 조정하여 FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.  
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/>
+<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/>  
+    
 ### Model PostProcessing
 그 지점은 임계점이 0.22507250725072508입니다.   
 최적의 모델을 후처리한 후, Fbeta, recall의 그래프, 혼동행렬 결과입니다.  
@@ -161,3 +162,35 @@ print(f'새로운 threshold: {thr_[idx]}')
 <img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169799199-249176eb-fb70-4fcd-8226-19443b099b5f.png" width="40%" height="300" float="right"/>
 <img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="80%" height="300"/>
 
+## Model Deploy
+```python
+
+if __name__ == '__main__':
+    print("GPU 실행: 1 입력 그 외 숫자 cpu 실행")
+    
+    cuda = int(input())
+    
+    train_df = DataLoader('./data/KDDTrain+.txt').data
+    test_df = DataLoader('./data/KDDTest+.txt').data
+
+    X_train_full, y_train_full, service, flag, oh_encoder = train_preprocessing(train_df)
+    X_test, y_test = test_preprocessing(test_df, service, flag, oh_encoder)
+    
+
+    if cuda == 1:
+        with open('./save_model/save_model.pickle', 'rb') as f:
+            lgb_model = pickle.load(f) 
+
+    else:
+        lgb_model = LGBMClassifier(colsample_bytree=0.8, learning_rate=0.01, max_depth=1, objective='binary', random_state=41, subsample=0.75)
+
+
+    X_train, X_val, y_train, y_val = train_test_split(X_train_full, y_train_full, train_size=0.8, stratify=y_train_full, random_state = 41)
+    
+    # X_train, y_train으로 최적의 파라미터를 찾음
+    lgb_model.fit(X_train, y_train)
+
+    y_test_pred = lgb_predict_threshold(lgb_model, X_test)
+    print(confusion_matrix(y_test, y_test_pred))
+    ```
+    
