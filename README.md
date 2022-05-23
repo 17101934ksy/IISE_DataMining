@@ -77,16 +77,16 @@ set_env(CFG['PATH'],CFG['SEED'])
 ```
 ### Model Object
 네트워크 통신의 범위는 컴퓨터를 넘어서 스마트폰과 같은 스마트 기기, 가정에서 사용하는 스마트 가전, 그리고 iot 등으로 확장되었습니다.  
-이렇게 범위가 크게 증가함에 따라서 통신의 과정이 다양화 되고 복잡해 졌습니다.  
-이에따라 네트워크 공격이 더욱 고도화되고 지능화 되는 등, 개인 정보 유출이나 서버 해킹 등의 위험성이 높아졌습니다.  
+이렇게 범위가 심하게 증가함에 따라서 통신의 과정이 다양화되고 복잡해졌습니다.  
+네트워크 공격은 더욱 고도화되고 지능화되는 등, 개인 정보 유출이나 서버 해킹 등의 위험성이 높아졌습니다.  
 저희는 이상탐지를 활용해 데이터 분석을 통한 네트워크 데이터 이상탐지에 대해서 연구하여  
 네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.
 
 <img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="80%" height="300"/>  
 
 ### Model Metrics
-주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.  
-sklearn에서는 혼동행렬 계산시 label=1을 양성으로 설정하므로 pos_label=0 으로 설정하였습니다.
+주제 특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.  
+sklearn에서는 혼동행렬 계산 시 label=1을 양성으로 설정하므로 pos_label=0으로 설정하였습니다.
 <img src="https://user-images.githubusercontent.com/88478829/169787624-4f3cdc7e-68e4-43ae-ae8e-45ac4203dd05.png" width="80%" height="300"/>
 <img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="40%" height="300" float="left"/> <img src="https://i.stack.imgur.com/swW0x.png" width="40%" height="300" float="right"/>
 
@@ -133,8 +133,8 @@ for lr in lgb_params['learning_rate']:
 
   
 ### Model PostProcessing
-Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
-오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
+Fbeta는 Precision을 어느 정도 반영한다는 점에서 한계가 존재합니다.   
+과적합을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 과적합을 줄이는 과정을 진행하였습니다.   
 또한, threshold를 조정하여 FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.        
   
 그 지점은 임계점이 0.22507250725072508입니다.   
