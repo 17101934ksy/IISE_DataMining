@@ -124,7 +124,7 @@ for lr in lgb_params['learning_rate']:
     lgb_score_.append(lgb_score)
 ```
 
-<img src="https://user-images.githubusercontent.com/88478829/169807488-11d8a8d2-120b-42b6-b510-64a42e40d087.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169807488-11d8a8d2-120b-42b6-b510-64a42e40d087.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169815456-c801cc35-1cdf-4b90-8ba4-9e3b617df2c7.png" width="40%" height="300" float="right"/>
 
   
 ### Model Test
