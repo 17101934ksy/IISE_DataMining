@@ -162,7 +162,8 @@ for i, thr in enumerate(thr_):
 print(f'새로운 threshold: {thr_[idx]}')
 >> 0.22507250725072508
 ```
-<img src="https://user-images.githubusercontent.com/88478829/169812435-d518db86-dffb-49e0-82de-adc1bc3efa00.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169799199-249176eb-fb70-4fcd-8226-19443b099b5f.png" width="40%" height="300" float="right"/>
+
+<img src="https://user-images.githubusercontent.com/88478829/169812435-d518db86-dffb-49e0-82de-adc1bc3efa00.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169815147-08c297a3-fae6-4600-9281-787673847945.png" width="40%" height="300" float="right"/>
 <img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="80%" height="300"/>
 
 ### Model Deploy
