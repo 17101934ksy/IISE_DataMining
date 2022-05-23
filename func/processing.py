@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
 # Pretrained model Processing
-def train_processing(df, drop_columns=['attack', 'level'], label='attack_flag', pretrained=True):
+def train_preprocessing(df, drop_columns=['attack', 'level'], label='attack_flag', pretrained=True):
   """
   df: 데이터프레임
   drop_columns: 원핫인코딩에 적용하지 않거나, 제거할 object columns
@@ -59,7 +59,7 @@ def train_processing(df, drop_columns=['attack', 'level'], label='attack_flag', 
 
 #########################################################################################################
 
-def test_processing(df, service, flag, oh_encoder, drop_columns=['attack', 'level'], label='attack_flag'):
+def test_preprocessing(df, service, flag, oh_encoder, drop_columns=['attack', 'level'], label='attack_flag'):
   """
   df: 데이터프레임
   service: X_train에 해당하는 serivce 레이블을 train에 그대로 적용하기 위한 고유 샘플 딕셔너리
@@ -92,3 +92,12 @@ def test_processing(df, service, flag, oh_encoder, drop_columns=['attack', 'leve
 
   return df, label_.to_numpy()
 
+
+
+#########################################################################################################
+
+def lgb_predict_threshold(lgb_model, X_test, threshod=0.22507250725072508):
+  y_test_prob = lgb_model.predict_proba(X_test)
+  y_test_pred = np.where(y_test_prob[:, 0] > threshod, 0, 1)
+
+  return y_test_pred
