@@ -123,8 +123,8 @@ for lr in lgb_params['learning_rate']:
     lgb_score_.append(lgb_score)
 ```
 
-<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="400" height="300" float="left"/>
-<img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="400" height="300" align="left"/>
+<img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" align="right"/>
   
   
 ### Model Test
