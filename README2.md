@@ -106,6 +106,7 @@ SVM|C, gamma, kernel|0.9973|1.0|
 ### Model Fine Tuning
 fbeta=2로 고정한 뒤, learing_rate, max_depth를 조정해가며   
 최고의 재현율과 fbeta값이 나오는 모델을 선정하는 단계입니다.
+최고의 Fbeta_Score의 하이퍼 파라미터는 Learinng_rate = 0.08, Max_depth= 6입니다
 ```python
 lgb_score_ = []
 params = []
@@ -121,7 +122,10 @@ for lr in lgb_params['learning_rate']:
     lgb_score = cross_validate(lgb_model, X_train_full, y_train_full, scoring=scoring)
     lgb_score_.append(lgb_score)
 ```
-   
+
+<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.pn" width="400" height="300" float="left"/>
+<img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" float="right"/>
+
 ### Model Test
 Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
 오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
