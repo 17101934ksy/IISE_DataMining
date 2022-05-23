@@ -88,7 +88,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.  
 sklearn에서는 혼동행렬 계산시 label=1을 양성으로 설정하므로 pos_label=0 으로 설정하였습니다.
 <img src="https://user-images.githubusercontent.com/88478829/169787624-4f3cdc7e-68e4-43ae-ae8e-45ac4203dd05.png" width="800" height="300"/>
-<img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="400" height="300" float="left"/>                                                                                                 <img src="https://i.stack.imgur.com/swW0x.png" width="400" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="400" height="300" float="left"/> <img src="https://i.stack.imgur.com/swW0x.png" width="400" height="300" float="right"/>
 
 ### Model Select
 모델링 선택은 Fbata score를 사용했습니다.  
@@ -138,12 +138,6 @@ Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합
 FP는 0 -> 233으로 증가했지만, 보안이라는 특수성을 고려하면 성능이 향상되었다고 판단할 수 있습니다.
     </p>
 
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="300" height="300" float="left"/>
-<img src="https://user-images.githubusercontent.com/88478829/169790704-f4f514ed-669c-4585-a46f-86127f52c880.png" width="300" height="300" float="right"/>
-<img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="400" height="300" float="left"/>
-<img src="https://user-images.githubusercontent.com/88478829/169794150-40d0c3f0-0a4d-413a-a2e0-c64cfa82770f.png" width="400" height="300" float="right"/>
-
-
 ```python
 lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=0.01, n_estimators=100, subsample=0.75, 
                             colsample_bytree=0.8, tree_method='gpu_hist', random_state=CFG['SEED'],
@@ -162,3 +156,9 @@ for i, thr in enumerate(thr_):
 print(f'새로운 threshold: {thr_[idx]}')
 >> 0.22507250725072508
 ```
+
+<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="300" height="300" float="left"/>
+<img src="https://user-images.githubusercontent.com/88478829/169790704-f4f514ed-669c-4585-a46f-86127f52c880.png" width="300" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="400" height="300" float="left"/>
+<img src="https://user-images.githubusercontent.com/88478829/169794150-40d0c3f0-0a4d-413a-a2e0-c64cfa82770f.png" width="400" height="300" float="right"/>
+
