@@ -192,4 +192,4 @@ if __name__ == '__main__':
     y_test_pred = lgb_predict_threshold(lgb_model, X_test)
     print(confusion_matrix(y_test, y_test_pred))
     ```
-    
+    패키지 다운로드 후 main.py를 실행하면 y_test의 혼동행렬을 확인할 수 있습니다.
