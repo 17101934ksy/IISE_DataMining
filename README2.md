@@ -125,17 +125,31 @@ for lr in lgb_params['learning_rate']:
 
 <img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="400" height="300" float="left"/>
 <img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" float="right"/>
-
+  
+  
 ### Model Test
 Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
 오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
-또한, threshold를 조정하여 Recall이 변하지 않고, FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.  그 지점은 임계점이 0.22507250725072508입니다.   
+또한, threshold를 조정하여 Recall이 변하지 않고, FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.  
+그 지점은 임계점이 0.22507250725072508입니다.   
 최적의 모델을 후처리한 후, Fbeta, recall의 그래프, 혼동행렬 결과입니다.
 ```python
 lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=0.01, n_estimators=100, subsample=0.75, 
                             colsample_bytree=0.8, tree_method='gpu_hist', random_state=CFG['SEED'],
                             max_depth=1)
                             ...
->>최적의 fbeta 성능: 0.988112
+
+threshold = confusion_matrix(y_val_pred, y_val)
+thr_ = np.linspace(0.5, 0, 10000)
+idx = -1
+for i, thr in enumerate(thr_):
+  y_val_pred = np.where(y_val_prob[:, 0] >= thr, 0, 1)
+  if np.sum(confusion_matrix(y_val, y_val_pred) == threshold) != 4:
+    idx = i
+    break
+    
+print(f'새로운 threshold: {thr_[idx]}')
+>> 0.22507250725072508
 ```
-<img src="https://user-images.githubusercontent.com/105711315/169698154-00893f28-c8ec-4e8a-8575-d943ce895351.png" width="500" height="300" float="left"/>                         <img src="https://user-images.githubusercontent.com/105711315/169698129-6a0f9df7-3a4b-4357-893e-d658934efe0d.png" width="300" height="300" float="right"/>
+
+<img src="https://user-images.githubusercontent.com/105711315/169698129-6a0f9df7-3a4b-4357-893e-d658934efe0d.png" width="300" height="300" float="right"/>
