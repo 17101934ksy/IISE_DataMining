@@ -82,7 +82,7 @@ set_env(CFG['PATH'],CFG['SEED'])
 저희는 이상탐지를 활용해 데이터 분석을 통한 네트워크 데이터 이상탐지에 대해서 연구하여  
 네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.
 
-<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="80%" height="300"/>
+<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="80%" height="300"/>  
 
 ### Model Metrics
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.  
@@ -127,9 +127,11 @@ for lr in lgb_params['learning_rate']:
 
   
 ### Model Test
-테스트 데이터셋 결과 FN이 144가 나왔습니다.
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/>    
+테스트 데이터셋 결과 FN이 144가 나왔습니다.  
 
+<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/>      
+
+  
 ### Model PostProcessing
 Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
 오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
