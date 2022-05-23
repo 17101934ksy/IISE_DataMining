@@ -82,13 +82,13 @@ set_env(CFG['PATH'],CFG['SEED'])
 저희는 이상탐지를 활용해 데이터 분석을 통한 네트워크 데이터 이상탐지에 대해서 연구하여  
 네트워크 침입을 탐지할 수 있는 이상탐지 모델을 만들어 보았습니다.
 
-<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="800" height="300"/>
+<img src="https://user-images.githubusercontent.com/88478829/169640650-c726ffbe-1494-430d-9da6-81ba06fbdfd7.png" width="80%" height="300"/>
 
 ### Model Metrics
 주제특성에 맞도록 주된 성능 평가지표는 Fbeta를 활용할 예정이고 보조수단으로 Recall을 활용하겠습니다.  
 sklearn에서는 혼동행렬 계산시 label=1을 양성으로 설정하므로 pos_label=0 으로 설정하였습니다.
 <img src="https://user-images.githubusercontent.com/88478829/169787624-4f3cdc7e-68e4-43ae-ae8e-45ac4203dd05.png" width="80%" height="300"/>
-<img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="40%" height="300" float="left"/> <img src="https://i.stack.imgur.com/swW0x.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169639782-9fe799b4-6ce9-4154-b17f-45db8db74187.png" width="40%" height="300" float="left"/><img src="https://i.stack.imgur.com/swW0x.png" width="40%" height="300" float="right"/>
 
 ### Model Select
 모델링 선택은 Fbata score를 사용했습니다.  
@@ -123,7 +123,7 @@ for lr in lgb_params['learning_rate']:
     lgb_score_.append(lgb_score)
 ```
 
-<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169788731-7278fdab-3640-43f7-8bde-cd75a0f12a26.png" width="40%" height="300" float="left"/><img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="40%" height="300" float="right"/>
   
 ### Model Test
 <p>
@@ -156,6 +156,6 @@ print(f'새로운 threshold: {thr_[idx]}')
 >> 0.22507250725072508
 ```
 
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169790704-f4f514ed-669c-4585-a46f-86127f52c880.png" width="40%" height="300" float="right"/>
-<img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169794150-40d0c3f0-0a4d-413a-a2e0-c64cfa82770f.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/><img src="https://user-images.githubusercontent.com/88478829/169790704-f4f514ed-669c-4585-a46f-86127f52c880.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="40%" height="300" float="left"/><img src="https://user-images.githubusercontent.com/88478829/169794150-40d0c3f0-0a4d-413a-a2e0-c64cfa82770f.png" width="40%" height="300" float="right"/>
 
