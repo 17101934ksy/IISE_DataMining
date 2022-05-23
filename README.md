@@ -59,6 +59,7 @@ IISE_DataMining/
         __init__.py
         loader.py
     project_ipynb/
+        __init__.py
         NSL_Model.ipynb
 ```
 
