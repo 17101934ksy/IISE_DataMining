@@ -127,15 +127,17 @@ for lr in lgb_params['learning_rate']:
 
   
 ### Model Test
-
-Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
-오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
-또한, threshold를 조정하여 FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.      
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/>  
+테스트 데이터셋 결과 FN이 144가 나왔습니다.
+<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/>    
 
 ### Model PostProcessing
+Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
+오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
+또한, threshold를 조정하여 FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.        
+  
 그 지점은 임계점이 0.22507250725072508입니다.   
 최적의 모델을 후처리한 후, Fbeta, recall의 그래프, 혼동행렬 결과입니다.  
+(왼쪽 사진: Validation set 결과, 오른쪽 사진 후처리 이후 Test set 결과)
 혼동행렬 결과 FN이 144 -> 35로 감소한 것을 확인할 수 있습니다.  
 FP는 0 -> 233으로 증가했지만, 보안이라는 특수성을 고려하면 성능이 향상되었다고 판단할 수 있습니다.
 
@@ -157,8 +159,7 @@ for i, thr in enumerate(thr_):
 print(f'새로운 threshold: {thr_[idx]}')
 >> 0.22507250725072508
 ```
-
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169799199-249176eb-fb70-4fcd-8226-19443b099b5f.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169812435-d518db86-dffb-49e0-82de-adc1bc3efa00.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169799199-249176eb-fb70-4fcd-8226-19443b099b5f.png" width="40%" height="300" float="right"/>
 <img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="80%" height="300"/>
 
 ### Model Deploy
