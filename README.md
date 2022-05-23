@@ -127,6 +127,7 @@ for lr in lgb_params['learning_rate']:
 <img src="https://user-images.githubusercontent.com/88478829/169789213-dbb9b72b-4488-4c06-a229-7f4b9609d2ae.png" width="400" height="300" float="right"/>
   
 ### Model Test
+<p>
 Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합니다.   
 오버피팅을 줄이는 방안으로 learning_rate 및 max_depth를 줄여서 overfitting을 줄이는 과정을 진행하였습니다.   
 또한, threshold를 조정하여 FP은 증가하지만 FN을 줄일 수 있는 지점을 구하였습니다.  
@@ -135,6 +136,7 @@ Fbeta는 Precision을 어느정도 반영한다는 점에서 한계가 존재합
 최적의 모델을 후처리한 후, Fbeta, recall의 그래프, 혼동행렬 결과입니다.  
 혼동행렬 결과 FN이 144 -> 35로 감소한 것을 확인할 수 있습니다.  
 FP는 0 -> 233으로 증가했지만, 보안이라는 특수성을 고려하면 성능이 향상되었다고 판단할 수 있습니다.
+    </p>
 
 ```python
 lgb_model = lgb.LGBMClassifier(objective='binary', learning_rate=0.01, n_estimators=100, subsample=0.75, 
