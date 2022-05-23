@@ -156,5 +156,5 @@ print(f'새로운 threshold: {thr_[idx]}')
 >> 0.22507250725072508
 ```
 
-<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169790704-f4f514ed-669c-4585-a46f-86127f52c880.png" width="40%" height="300" float="right"/>
+<img src="https://user-images.githubusercontent.com/88478829/169789897-0a1b3dcd-e945-46a5-8d00-5a65289c1997.png" width="40%" height="300" float="left"/> <img src="https://user-images.githubusercontent.com/88478829/169799199-249176eb-fb70-4fcd-8226-19443b099b5f.png" width="40%" height="300" float="right"/>
 <img src="https://user-images.githubusercontent.com/88478829/169793676-b99b9969-0048-4c7d-b66e-7ef793e056ef.png" width="80%" height="300"/>
